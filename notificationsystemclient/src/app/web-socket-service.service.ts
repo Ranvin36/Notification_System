@@ -10,6 +10,7 @@ export class WebSocketServiceService {
   constructor() { 
     if(typeof window !== 'undefined'){
       this.socket$ = webSocket('ws://localhost:3000');
+      this.socket$.next({type:"getMessages"});
     }
   }
 
