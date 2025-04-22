@@ -8,16 +8,16 @@
         <h2>Recent Notifications</h2>
         <hr/>
       </div>
-      <div class="notification-list">
-        <app-notification-layout title="Ranvin Wickramsinghe has been named as the best developer of the month"></app-notification-layout>
-        <app-notification-layout title="Ranvin Wickramsinghe has been named as the best developer of the year"></app-notification-layout>
-        <app-notification-layout title="Ranvin Wickramsinghe has been named as the best developer of the decade"></app-notification-layout>
+      <div class="notification-list" *ngIf="messages">
+        <div *ngFor="let message of messages">
+          <app-notification-layout [title]="message.message"></app-notification-layout>
+        </div>
       </div>
       <div class="send-notification">
         <div class="send-notification-layout">
-          <input type="text" placeholder="Enter your notification title">
+          <input type="text" placeholder="Enter your notification title" (input)="onNotificationMessage($event)">
         </div>
-        <div class="send-notification-button">
+        <div class="send-notification-button" (click)="sendNotification()">
           <mat-icon style="color: #fff;font-size: 25px;">send</mat-icon>
         </div>
       </div>
