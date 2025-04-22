@@ -15,9 +15,9 @@
       </div>
       <div class="send-notification">
         <div class="send-notification-layout">
-          <input type="text" placeholder="Enter your notification title">
+          <input type="text" placeholder="Enter your notification title" (input)="onNotificationMessage($event)">
         </div>
-        <div class="send-notification-button">
+        <div class="send-notification-button" (click)="sendNotification()">
           <mat-icon style="color: #fff;font-size: 25px;">send</mat-icon>
         </div>
       </div>

@@ -63,7 +63,9 @@ hr{
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
+    outline: none;
     background-color: transparent;
+    color: #fff;
 }
 
 .send-notification-button{
