@@ -1,0 +1,16 @@
+<div 
+    class="alert-container" 
+    [ngStyle]="{ 
+        opacity: action ? '1' : '0', 
+        right: action ? '50px' : '0px' 
+    }"
+>
+    <div class="alert-layout">
+        <div class="icon">
+            <mat-icon style="color: #fff;">confirmation_number</mat-icon>
+        </div>
+        <div class="text">
+            <p>{{message}}</p>
+        </div>
+    </div>
+</div>

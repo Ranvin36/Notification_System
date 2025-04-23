@@ -30,6 +30,15 @@
 hr{
     border: 1px solid #a1a0a0;
 }
+.no-notifications{
+    text-align: center;
+    margin-top: 200px;
+}
+.no-notifications h3{
+    color: #747474;
+    font-size: 17px;
+    font-weight: 500;
+}
 
 .notification-list{
     margin-top: 35px;
@@ -80,4 +89,5 @@ hr{
     align-items: center;
     margin: 0px 10px;
     cursor: pointer;
+    z-index: 1;
 }
