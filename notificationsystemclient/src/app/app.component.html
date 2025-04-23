@@ -1,25 +1,31 @@
 
 <div class="container">
+  <app-alert [message]="alertMessage" [action]="alertAction"></app-alert>
   <div class="container-layout">
       <div class="container-title">
-        <h1>Notification System</h1>
+        <h1>Notification System</h1>  
       </div>
       <div class="recent-notifications">
         <h2>Recent Notifications</h2>
         <hr/>
       </div>
-      <div class="notification-list" *ngIf="messages">
+      <div class="notification-list" *ngIf="messages.length > 0; else noNotifications">
         <div *ngFor="let message of messages">
           <app-notification-layout [title]="message.message"></app-notification-layout>
         </div>
       </div>
+      <ng-template #noNotifications>
+        <div class="no-notifications">
+            <h3>No notifications were sent recently.</h3>
+        </div>
+      </ng-template>
       <div class="send-notification">
         <div class="send-notification-layout">
-          <input type="text" placeholder="Enter your notification title" (input)="onNotificationMessage($event)">
+          <input type="text" placeholder="Enter your notification title" [(ngModel)]="notificationMessage">
         </div>
-        <div class="send-notification-button" (click)="sendNotification()">
-          <mat-icon style="color: #fff;font-size: 25px;">send</mat-icon>
-        </div>
+          <div class="send-notification-button" (click)="sendNotification()">
+            <mat-icon style="color: #fff;font-size: 25px;">send</mat-icon>
+          </div>
       </div>
   </div>
 </div>
